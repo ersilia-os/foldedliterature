@@ -4,6 +4,8 @@ import random
 
 AA = "ARNDCQEGHILKMFPSTWYV"
 
+PATH = os.path.dirname(os.path.abspath(__file__))
+
 def text2aa(text):
     char_counts = collections.defaultdict(int)
     seq = ""
@@ -38,6 +40,6 @@ def text2aa(text):
 
 def textfile2aa(prefix):
     file_name = prefix+".txt"
-    with open(os.path.join("data", file_name), "r") as f:
+    with open(os.path.join(PATH, "data", file_name), "r") as f:
         text = f.read()
     return text2aa(text)
